@@ -9,25 +9,26 @@ use Illuminate\Http\Request;
 
 class ContratoController extends Controller
 {
-    public function index(Request $request)
-    {
-        $categorias = Categoria::all();
-        $empresas = Empresa::all();
+  public function index(Request $request)
+{
+    $categorias = Categoria::all();
+    $empresas = Empresa::all();
 
-        $query = Contrato::query();
+    $query = Contrato::with(['categoria', 'empresa']); 
 
-        if ($request->filled('categoria_id')) {
-            $query->where('categoria_id', $request->categoria_id);
-        }
-
-        if ($request->filled('empresa_id')) {
-            $query->where('empresa_id', $request->empresa_id);
-        }
-
-        $contratos = $query->latest()->paginate(10);
-
-        return view('contratos.index', compact('contratos', 'categorias', 'empresas'));
+    if ($request->filled('categoria_id')) {
+        $query->where('categoria_id', $request->categoria_id);
     }
+
+    if ($request->filled('empresa_id')) {
+        $query->where('empresa_id', $request->empresa_id);
+    }
+
+    $contratos = $query->latest()->paginate(10); 
+
+    return view('contratos.index', compact('contratos', 'categorias', 'empresas'));
+}
+
 
  
     public function create()

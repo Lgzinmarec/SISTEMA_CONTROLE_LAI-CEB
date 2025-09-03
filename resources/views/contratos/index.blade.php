@@ -66,4 +66,8 @@
             @endforeach
         </tbody>
     </table>
+    <div class="d-flex justify-content-center">
+    {{ $contratos->appends(request()->query())->links() }}
+</div>
+
 @endsection
