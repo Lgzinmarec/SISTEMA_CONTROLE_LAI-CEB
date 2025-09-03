@@ -35,16 +35,20 @@
         .form-control {
             border-radius: 0.5rem;
         }
-        .btn-primary {
+         .btn-primary {
             background-color: #E87B14;
-            border-color: #E87B14;
-            color: #1b5c83;
-            font-weight: bold;
+            border: none;
+            color: #ffffff;
         }
+
         .btn-primary:hover {
-            background-color: #e97e19ff;
-            border-color: #e97e19ff;
-            color: #1b5c83;
+            background-color: #cc6a10;
+            color: #ffffff;
+        }
+
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.25rem rgba(232, 123, 20, 0.5);
+            outline: none;
         }
         .form-label {
             font-weight: 600;

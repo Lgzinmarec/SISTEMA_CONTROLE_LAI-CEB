@@ -19,16 +19,16 @@
         background-color: #1b5c83; 
     }
 
-    .btn-primary {
-        background-color: #E87B14; 
-        border: none;
-        color: #004b87;
-    }
+   .btn-primary {
+    background-color: #E87B14; 
+    border: none;
+    color: #ffffff; 
+}
 
-    .btn-primary:hover {
-        background-color: #E87B14;
-        color: #1b5c83;
-    }
+.btn-primary:hover {
+    background-color: #cc6a10; 
+    color: #ffffff;
+}
 
     .container {
         margin-top: 2rem;
@@ -57,6 +57,15 @@
         padding-left: 0;
         list-style: none;
         border-radius: 0.375rem;
+    }
+      .btn-custom-orange {
+      background-color: #E87B14;
+      color: white;
+      border: none;
+    }
+
+    .btn-custom-orange:hover {
+      background-color: #cc6a10; 
     }
 
     .pagination .page-item .page-link {
@@ -98,7 +107,7 @@
             <div class="ms-auto">
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="btn btn-warning">Sair</button>
+                    <button type="submit" class="btn btn-custom-orange">Sair</button>
                 </form>
             </div>
         </div>
